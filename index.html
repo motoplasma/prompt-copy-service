@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinderfreundlicher Prompt-Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Willkommen zum Prompt-Generator!</h1>
+        <p>Wähle eine Schaltfläche aus, um den Text in den Chatbot einzufügen!</p>
+    </header>
+    
+    <main>
+        <section id="prompt-buttons"></section>
+        
+        <div id="admin-section">
+            <h2>Neuen Prompt hinzufügen</h2>
+            <input type="text" id="prompt-input" placeholder="Prompt eingeben">
+            <input type="text" id="label-input" placeholder="Beschriftung (bis zu 4 Wörter)">
+            <button onclick="addPrompt()">Prompt hinzufügen</button>
+            <button id="delete-button" onclick="clearAllPrompts()">Alle Prompts löschen</button>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
