@@ -1,82 +1,69 @@
+/* Grundlegendes Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    text-align: center;
     margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Farbiger Hintergrund */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Vollbildhöhe */
 }
 
-header {
-    background-color: #ffc107;
+/* Container für die Inhalte */
+.container {
+    background-color: white; /* Weißer Bereich in der Mitte */
+    width: 90%; /* Breite relativ zum Bildschirm */
+    max-width: 800px; /* Maximale Breite */
     padding: 20px;
+    border-radius: 15px; /* Abgerundete Ecken */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Schatten für 3D-Effekt */
+    text-align: center;
+    margin: auto; /* Zentriert den Container vertikal und horizontal */
 }
 
-h1 {
+/* Überschrift */
+header h1 {
+    color: #3a3a3a; /* Dunkelgraue Schrift */
     font-size: 2.5em;
     margin: 0;
 }
 
-p {
-    font-size: 1.2em;
-    margin-top: 5px;
+header p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6; /* Angenehmes Zeilenlayout */
 }
 
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#prompt-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-button {
-    font-size: 1.5em;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: #4caf50;
+/* Buttons */
+#prompt-buttons button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    font-size: 18px;
     color: white;
-    transition: background-color 0.3s ease;
-    margin: 5px;
+    background-color: #00796b; /* Türkis */
+    border: none;
+    border-radius: 10px; /* Abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-button:hover {
-    background-color: #45a049;
+/* Hover- und Klick-Effekte für Buttons */
+#prompt-buttons button:hover {
+    background-color: #005b4f; /* Dunkleres Türkis */
 }
 
-button:active {
-    background-color: #3e8e41;
+#prompt-buttons button:active {
+    transform: scale(0.95);
 }
 
-/* Spezifisches Styling für den Lösch-Button */
-#delete-button {
-    background-color: #ff5722;
-}
-
-#delete-button:hover {
-    background-color: #e64a19;
-}
-
-#delete-button:active {
-    background-color: #d84315;
-}
-
-#admin-section {
-    margin-top: 30px;
-}
-
-input[type="text"] {
-    font-size: 1em;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #888;
+    background-color: #f0f4f8; /* Gleiche Farbe wie der Seitenhintergrund */
 }
