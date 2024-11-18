@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kinderfreundlicher Prompt-Generator</title>
+    <title>KI-Aktivitäten für Kinder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Willkommen zum Prompt-Generator!</h1>
-        <p>Wähle eine Schaltfläche aus, um den Text in den Chatbot einzufügen!</p>
-    </header>
-    
-    <main>
-        <section id="prompt-buttons"></section>
-        
-        <div id="admin-section">
-            <h2>Neuen Prompt hinzufügen</h2>
-            <input type="text" id="prompt-input" placeholder="Prompt eingeben">
-            <input type="text" id="label-input" placeholder="Beschriftung (bis zu 4 Wörter)">
-            <button onclick="addPrompt()">Prompt hinzufügen</button>
-            <button id="delete-button" onclick="clearAllPrompts()">Alle Prompts löschen</button>
-        </div>
-    </main>
+    <div class="container">
+        <header>
+            <h1>KI-Aktivitäten für Kinder</h1>
+<img src="KI_grundschule.png" alt="Ein Bild zu KI-Aktivitäten" class="header-image">
+            <p>Entdecke spannende Themen und Aufgaben mit künstlicher Intelligenz. Klicke einfach auf einen der unten stehenden Knöpfe und los geht's! Der Text wird automatisch für dich kopiert. Du kannst ihn dann in ein Programm oder eine Anwendung mit künstlicher Intelligenz einfügen und sehen, was passiert.</p>
+        </header>
 
-    <script src="scripts.js"></script>
+        <main>
+            <section id="prompt-buttons">
+                <button onclick="copyPrompt('Ich möchte, dass du mich auf eine Entdeckungsreise führst. Frage mich zuerst, in welcher Klassenstufe ich bin. Verwende dann die ganze Zeit über eine Sprache, die für ein Kind meiner Klassenstufe verständlich ist. Frage mich als nächstes, über welches Thema ich mehr erfahren möchte. Führe dann eine wiederholte Unterhaltung mit mir, bei der du mir Informationen zu meinem gewählten Thema gibst und mich danach fragst, was mich an deiner Antwort noch interessiert. Setze diese Unterhaltung so fort, und achte darauf, eine altersgerechte Sprache zu verwenden, bis ich stoppe.')">Entdeckungsreise</button>
+
+                <button onclick="copyPrompt('Hilf mir, eine Geschichte zu erfinden und zu planen! Frage zuerst, in welcher Klassenstufe ich bin. Verwende dann die ganze Zeit über eine Sprache, die ich gut verstehen kann. Hilf mir dabei, Ideen für die Geschichte zu finden: wo findet die Geschichte statt? Um wen geht es? Um was geht es? Führe dann eine wiederholte Unterhaltung mit mir, bei der du mir Ideen für die Geschichte gibst und mich danach fragst, was mich an deiner Antwort noch interessiert oder was ich verändern möchte. Frage auch immer wieder nach, ob ich schon anfangen kann, die Geschichte zu schreiben und wie ich die Geschichte anfangen könnte. Setze diese Unterhaltung so fort, und achte darauf, eine altersgerechte Sprache zu verwenden, bis ich stoppe. Gebe die Antworten bestärkend und knapp, so dass es nicht zu viel zu lesen gibt.')">Eine Geschichte erfinden</button>
+
+                <button onclick="copyPrompt('Du nimmst mich mit ins Matheland, ein Ort voller Zahlen und Muster! Frage mich zuerst, in welcher Klasse ich bin und schreibe danach die ganze Zeit so, dass ich dich gut verstehe. Frage mich dann, was ich entdecken will? Mache mir Vorschläge für Themen, die mich in meinem Alter interessieren könnten und was ich in Matheland entdecken kann, zum Beispiel Zählen, Rechnen oder Muster. Zusammen lösen wir knifflige Rätsel! Stelle mir durchgängig Fragen und gebe Antworten mit maximal 50 Wörtern. Gehe Schritt für Schritt (erst nach der Klasse fragen, dann nach Interesse usw.) und sehr kindgemäß vor.')">Reise ins Matheland</button>
+
+                <button onclick="copyPrompt('Hilf uns, ein spannendes Projekt für die Schule zu planen! Frage uns zuerst, in welcher Klassenstufe wir sind, und verwende dann eine Sprache, die wir gut verstehen können. Frage uns, worüber wir gerne mehr erfahren oder was wir gerne machen würden: Möchten wir etwas basteln, etwas erforschen oder eine Präsentation vorbereiten? Hilf uns, Schritt für Schritt Ideen zu sammeln und eine Struktur für unser Projekt zu erstellen. Frage uns, welche Materialien wir brauchen, wie wir anfangen könnten und wie das Ergebnis aussehen soll. Unterstütze uns mit kurzen, ermutigenden Antworten und achte darauf, dass wir immer sagen können, was uns gefällt oder nicht gefällt.')">Ein Projekt planen</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Bernd Schüssele</p>
+    </footer>
+
+    <script>
+        // Funktion zum Kopieren des Textes in die Zwischenablage
+        function copyPrompt(promptText) {
+            navigator.clipboard.writeText(promptText).then(() => {
+                alert("Text kopiert! Füge ihn jetzt in das KI-Programm ein und schau, was passiert.");
+            }).catch(err => {
+                console.error("Fehler beim Kopieren des Textes:", err);
+            });
+        }
+    </script>
 </body>
 </html>
