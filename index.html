@@ -16,7 +16,31 @@
 
         <main>
             <section id="prompt-buttons">
-                <button onclick="copyPrompt('Führe mich auf eine spannende Entdeckungsreise! 🚀🔍
+                <button id="entdeckungsreise">Entdeckungsreise</button>
+                <button id="geschichte">Eine Geschichte erfinden</button>
+                <button id="matheland">Reise ins Matheland</button>
+                <button id="projekt">Ein Projekt planen</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Bernd Schüssele</p>
+    </footer>
+
+    <script>
+        function copyPrompt(promptText) {
+            navigator.clipboard.writeText(promptText)
+                .then(() => {
+                    alert("Text kopiert! Füge ihn jetzt in das KI-Programm ein und schau, was passiert.");
+                })
+                .catch(err => {
+                    console.error("Fehler beim Kopieren des Textes:", err);
+                });
+        }
+
+        const prompts = {
+            entdeckungsreise: `Führe mich auf eine spannende Entdeckungsreise! 🚀🔍
 
 1️⃣ Frage zuerst: „In welcher Klasse bist du?“ Sprich altersgerecht mit mir.
 2️⃣ Dann frage mich: „Welches Thema möchtest du entdecken?“
@@ -27,18 +51,10 @@ Falls nicht: Mache Vorschläge wie:
 🚀 Weltall & Planeten (Gibt es Leben auf anderen Planeten?)
 🏰 Geschichte & Abenteuer (Wie lebten Ritter?)
 ⚙️ Technik & Wissenschaft (Wie funktionieren Roboter?)
-3️⃣ Führe mich interaktiv durch das Thema:
-Erkläre kurz (max. 50 Wörter) und stelle danach Fragen wie:
-„Was findest du daran spannend?“
-„Möchtest du mehr wissen?“
-„Hast du Fragen?“
-4️⃣ Bleibe dabei, bis ich stoppe.
-Falls ich das Thema wechseln will, schlage neue Themen vor.
-Falls ich mehr wissen will, gib mir vertiefende Erklärungen.
-Falls ich etwas nicht verstehe, erkläre es einfach und bildlich.
-✨ Lass uns gemeinsam die Welt entdecken! 🌍🚀🔍')">Entdeckungsreise</button>
 
-                <button onclick="copyPrompt('Hilf mir, eine eigene Geschichte zu erfinden und zu planen! ✨📚
+✨ Lass uns gemeinsam die Welt entdecken! 🌍🚀🔍`,
+            
+            geschichte: `Hilf mir, eine eigene Geschichte zu erfinden und zu planen! ✨📚
 
 1️⃣ Frage zuerst: „In welcher Klasse bist du?“ Sprich altersgerecht mit mir.
 2️⃣ Dann frage mich: „Hast du schon eine Idee für deine Geschichte?“
@@ -51,21 +67,10 @@ Falls nein: Mache Vorschläge wie:
 📍 Ort: Dschungel? Weltall? Mittelalter?
 👫 Figuren: Ein mutiger Held? Ein sprechendes Tier? Ein geheimnisvoller Fremder?
 🎭 Handlung: Ein Abenteuer? Ein großes Geheimnis? Eine Zeitreise?
-3️⃣ Führe eine interaktive Unterhaltung:
-Gib mir kurze Ideen (max. 50 Wörter) und frage mich:
-„Passt das für dich?“
-„Willst du etwas ändern?“
-„Möchtest du noch eine andere Idee hören?“
-4️⃣ Motiviere mich zum Schreiben! Frage zwischendurch:
-„Willst du schon anfangen zu schreiben?“
-„Wie könnte dein erster Satz lauten?“
-„Soll ich dir beim Anfang helfen?“
-5️⃣ Bleibe dabei, bis ich aufhöre.
-Falls ich nicht weiterweiß, gib mir Tipps.
-Falls ich das Genre ändern möchte, unterstütze mich.
-🚀 Lass uns gemeinsam eine tolle Geschichte erschaffen! ✨📚')">Eine Geschichte erfinden</button>
 
-                <button onclick="copyPrompt('Du nimmst mich mit ins Matheland – ein magischer Ort voller Zahlen, Muster und Rätsel! 🎢✨
+🚀 Lass uns gemeinsam eine tolle Geschichte erschaffen! ✨📚`,
+            
+            matheland: `Du nimmst mich mit ins Matheland – ein magischer Ort voller Zahlen, Muster und Rätsel! 🎢✨
 
 1️⃣ Frage zuerst: „In welcher Klasse bist du?“ Sprich immer altersgerecht mit mir. Erkläre Mathe so, dass ich es gut verstehe.
 2️⃣ Dann frage mich: „Was möchtest du im Matheland entdecken?“ Falls ich keine Idee habe, schlage vor:
@@ -74,19 +79,10 @@ Falls ich das Genre ändern möchte, unterstütze mich.
 ➕ Rechnen (Warum ist 1 + 1 immer 2?)
 🔺 Muster & Formen (Welche Muster gibt es in der Natur?)
 🤔 Knifflige Rätsel (Kannst du ein Mathe-Detektiv sein?)
-3️⃣ Führe mich interaktiv durch das Matheland!
-Erkläre mir etwas in max. 50 Wörtern.
-Stelle mir danach Fragen wie:
-„Was denkst du?“
-„Möchtest du weiterforschen?“
-„Hast du Lust, eine Aufgabe zu lösen?“
-4️⃣ Bleibe dabei, bis ich aufhören möchte.
-Falls ich nicht weiterweiß, ermutige mich.
-Falls ich das Thema wechseln will, mache mir neue Vorschläge.
-Falls ich falsch rechne, erkläre es mir geduldig.
-🚀 Lass uns Mathe spielerisch entdecken! 🎉🔢')">Reise ins Matheland</button>
 
-                <button onclick="copyPrompt('Hilf uns, ein spannendes Projekt zu planen! 🚀
+🚀 Lass uns Mathe spielerisch entdecken! 🎉🔢`,
+            
+            projekt: `Hilf uns, ein spannendes Projekt zu planen! 🚀
 
 1️⃣ Frage zuerst: „In welcher Klasse seid ihr?“ Sprich altersgerecht mit uns.
 2️⃣ Dann frage uns: „Was wollt ihr machen?“
@@ -96,38 +92,14 @@ Falls nicht: Mache Vorschläge wie:
 🎨 Basteln (Etwas Kreatives gestalten)
 🔍 Forschen (Ein Experiment durchführen)
 📖 Eine Präsentation vorbereiten
-3️⃣ Führe uns Schritt für Schritt durch die Planung:
-Stelle nur eine Frage auf einmal, z. B.:
-„Welche Materialien brauchen wir?“
-„Wie starten wir?“
-„Was wäre ein guter nächster Schritt?“
-4️⃣ Achte darauf, dass wir jederzeit sagen können, was uns gefällt oder nicht gefällt.
-Stelle Fragen wie:
-„Passt das für euch?“
-„Braucht ihr Hilfe?“
-„Soll ich euch noch eine andere Idee geben?“
-5️⃣ Motiviere uns mit kurzen, positiven Rückmeldungen.
-Falls wir uns nicht entscheiden können, gib uns spielerische Tipps.
-Falls wir das Thema wechseln wollen, mache neue Vorschläge.
-🚀 Lasst uns ein tolles Projekt erschaffen! 🎨🔍📖')">Ein Projekt planen</button>
-            </section>
-        </main>
-    </div>
 
-    <footer>
-        <p>Bernd Schüssele</p>
-    </footer>
+🚀 Lasst uns ein tolles Projekt erschaffen! 🎨🔍📖`
+        };
 
-    <script>
-        function copyPrompt(promptText) {
-            const textArea = document.createElement("textarea");
-            textArea.value = promptText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textArea);
-            alert("Text kopiert! Füge ihn jetzt in das KI-Programm ein und schau, was passiert.");
-        }
+        document.getElementById("entdeckungsreise").addEventListener("click", () => copyPrompt(prompts.entdeckungsreise));
+        document.getElementById("geschichte").addEventListener("click", () => copyPrompt(prompts.geschichte));
+        document.getElementById("matheland").addEventListener("click", () => copyPrompt(prompts.matheland));
+        document.getElementById("projekt").addEventListener("click", () => copyPrompt(prompts.projekt));
     </script>
 </body>
 </html>
